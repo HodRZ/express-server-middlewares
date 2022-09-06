@@ -3,10 +3,11 @@
 
 const cors = require('cors');
 const express = require('express');
+const app = express();
+
 const { errorHandler } = require('./api/error-handlers/500');
 const { validateNum } = require('./api/middleware/validate-number');
 const { handelGetNums } = require('./api/routes/handleGetNums');
-const app = express();
 
 
 app.use(cors());
