@@ -7,4 +7,5 @@ function validateNum(req, res, next) {
     } else next('input is not a number')
 }
 
+
 module.exports = { validateNum }
