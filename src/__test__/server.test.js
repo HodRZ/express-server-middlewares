@@ -1,3 +1,4 @@
+'use strict'
 const { request } = require('../config/testConfig.js')
 
 describe('/, get', () => {

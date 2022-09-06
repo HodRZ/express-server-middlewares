@@ -3,6 +3,9 @@
 
 const cors = require('cors');
 const express = require('express');
+const { errorHandler } = require('./api/error-handlers/500');
+const { validateNum } = require('./api/middleware/validate-number');
+const { handelGetNums } = require('./api/routes/handleGetNums');
 const app = express();
 
 
@@ -18,5 +21,9 @@ function radio(port) {
 app.get('/', (req, res) => {
     res.status(200).send('Hey Mom!')
 })
+
+
+app.get('/square', validateNum, handelGetNums)
+app.use(errorHandler)
 
 module.exports = { app, radio }
