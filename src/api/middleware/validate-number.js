@@ -2,7 +2,8 @@
 
 function validateNum(req, res, next) {
     const { num } = req.query;
-    if (!isNaN(parseInt(num))) {
+    const regex = /\b[0-9][0-9]*\b/g
+    if (regex.test(num)) {
         next()
     } else next('input is not a number')
 }
